@@ -1,5 +1,5 @@
 {
-    "name": "jest",
+    "name": "01-jest",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -8,5 +8,8 @@
     },
     "keywords": [],
     "author": "Leandro Da Souza",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^26.4.0"
+    }
 }
