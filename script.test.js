@@ -17,9 +17,21 @@ it('should return the sum of two numbers', () => {
     expect(actual).toBe(expected);
 });
 
-it('should return the difference between two numbers', () => {
+it('should return 14 for the difference between 28 and 14 ', () => {
     // Arrange
     const x = 28;
+    const y = 14;
+
+    let expected = x - y;
+
+    let actual = subtract(x, y);
+
+    expect(actual).toBe(expected);
+});
+
+it('shoudl return -2 for the difference between 14 and 16 ', () => {
+    // Arrange
+    const x = 16;
     const y = 14;
 
     let expected = x - y;
