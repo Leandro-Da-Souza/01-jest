@@ -1,6 +1,5 @@
 const script = require('./script.js');
-const add = script.add;
-const subtract = script.subtract;
+const { add, subtract, multiply } = script;
 
 // jest har funktionerna it, expect, toBe
 it('should return the sum of two numbers', () => {
@@ -37,6 +36,18 @@ it('shoudl return -2 for the difference between 14 and 16 ', () => {
     let expected = x - y;
 
     let actual = subtract(x, y);
+
+    expect(actual).toBe(expected);
+});
+
+it('should return the product of two numbers', () => {
+    // arrange
+    const x = 5,
+        y = 25;
+    let expected = x * y;
+
+    // act
+    let actual = multiply(x, y);
 
     expect(actual).toBe(expected);
 });

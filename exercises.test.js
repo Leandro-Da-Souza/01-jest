@@ -1,4 +1,5 @@
 let exercises = require('./exercises.js');
+const { isWaterBoiling } = require('./exercises.js');
 
 const { store, retrive, capitalize } = exercises;
 
@@ -47,4 +48,46 @@ it('should capitalize monster', () => {
 
     //assert
     expect(actual).toBe(expected);
+});
+
+it('should return "" for ""', () => {
+    let string = '';
+    let expected = '';
+
+    let actual = capitalize(string);
+
+    expect(actual).toBe(expected);
+});
+
+it('should return "1234" for "1234', () => {
+    let string = '1234';
+    let expected = '1234';
+
+    let actual = capitalize(string);
+
+    expect(actual).toBe(expected);
+});
+
+it('should return true if value is over 100', () => {
+    let value = 120;
+    let expected = true;
+
+    let actual = isWaterBoiling(value);
+    expect(actual).toBe(expected);
+});
+
+it('should return false if value is lower than 100', () => {
+    let value = 60;
+    let expected = false;
+
+    let actual = isWaterBoiling(value);
+    expect(actual).toBe(expected);
+});
+
+it('should throw an error if input is not a number', () => {
+    let value = 'hej';
+
+    let maybeError = () => isWaterBoiling(value);
+
+    expect(maybeError).toThrow();
 });
