@@ -22,9 +22,20 @@ isWaterBoiling = (degrees) => {
     }
 };
 
+intToRoman = (num) => {
+    if (typeof num !== 'number') {
+        throw new Error('must be a number');
+    } else if (num < 1) {
+        throw new Error('error');
+    } else if (num > 18) {
+        throw new Error('error');
+    } else return num.toString();
+};
+
 module.exports = {
     store,
     retrive,
     capitalize,
     isWaterBoiling,
+    intToRoman,
 };

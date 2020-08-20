@@ -1,7 +1,7 @@
 let exercises = require('./exercises.js');
 const { isWaterBoiling } = require('./exercises.js');
 
-const { store, retrive, capitalize } = exercises;
+const { store, retrive, capitalize, intToRoman } = exercises;
 
 // 2a vilka testfall har vi?
 it('should store a value', () => {
@@ -88,6 +88,60 @@ it('should throw an error if input is not a number', () => {
     let value = 'hej';
 
     let maybeError = () => isWaterBoiling(value);
+
+    expect(maybeError).toThrow();
+});
+
+// exercise 6
+it('should return the number 5 as a string', () => {
+    // arrange
+    let num = 5;
+    let expected = '5';
+
+    // act
+    let actual = intToRoman(num);
+    // assert
+    expect(actual).toBe(expected);
+});
+
+it('should return any given number into a string', () => {
+    let num = 4;
+    let expected = '4';
+
+    let actual = intToRoman(num);
+
+    expect(actual).toBe(expected);
+});
+
+it('should only work between numbers 1 and 18', () => {
+    let num = 18;
+    let expected = '18';
+
+    let actual = intToRoman(num);
+
+    expect(actual).toBe(expected);
+});
+
+it('should throw error if number is lower than 1', () => {
+    let num = -24;
+
+    let maybeError = () => intToRoman(num);
+
+    expect(maybeError).toThrow();
+});
+
+it('should throw an error if number is higher than 18', () => {
+    let num = 500;
+
+    let maybeError = () => intToRoman(num);
+
+    expect(maybeError).toThrow();
+});
+
+it('should throw error if parameter is not a number', () => {
+    let value = 'hej';
+
+    let maybeError = () => intToRoman(value);
 
     expect(maybeError).toThrow();
 });
